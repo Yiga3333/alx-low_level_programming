@@ -2,6 +2,6 @@
 
 #define _HEADER_
 
-#define SIZE 1024
+#define ABS(x) ((x) < 0 ? ((x) * -1) : (x))
 
 #endif
