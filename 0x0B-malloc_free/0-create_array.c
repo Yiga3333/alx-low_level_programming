@@ -1,17 +1,28 @@
+#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
-/**
- * *malloc_checked - allocates memory using malloc
- * @b: number of bytes to allocate
- *
- * Return: a pointer to the allocated memory
- */
-void *malloc_checked(unsigned int b)
-{
-	void *ptr;
 
-	ptr = malloc(b);
-	if (ptr == NULL)
-		exit(98);
-	return (ptr);
+/**
+ * create_array - Entry point
+ *@size: size of the array
+ *@c: character
+ * Return: a pointer to the array, or NULL if it fails
+ */
+char *create_array(unsigned int size, char c)
+{
+	char *array = NULL;
+	unsigned int i;
+
+	if (size == 0)
+		return (NULL);
+	if (size != 0)
+	{
+		array = (char *)malloc(size * sizeof(char));
+		if (array != NULL)
+		{
+			for (i = 0; i < size; i++)
+				array[i] = c;
+		}
+	}
+	return (array);
 }
